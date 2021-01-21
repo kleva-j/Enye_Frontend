@@ -1,0 +1,54 @@
+.skeleton {
+  background: #ddd;
+  border-radius: 0.25rem;
+
+  &.text {
+    width: 60%;
+    height: 0.75rem;
+    margin: 0 0 0.625rem 0 ;
+  }
+
+  &.title {
+    width: 50%;
+    margin-bottom: .9375rem;
+    height: 1.25rem;
+  }
+
+  &.avatar {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+  }
+   &.thumbnail {
+     width: 6.25rem;
+     height: 6.25rem;
+   }
+}
+
+.skeleton_card {
+  height: 10rem;
+  width: 18%;
+  min-width: 15rem;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1rem 1rem 0;
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0;
+
+  &.light {
+    background: #f9f9f9;
+  }
+
+  &.dark {
+    background: #777;
+    .skeleton {
+      background: #d3d3d3;
+    }
+  }
+}

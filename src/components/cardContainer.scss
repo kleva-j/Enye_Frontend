@@ -1,0 +1,17 @@
+@import '../partials/mixins';
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-top: 1rem;
+  justify-content: space-between;
+
+  @include media(tab-sm) {
+    justify-content: center;
+  }
+
+  @include media(tab-xm) {
+    justify-content: center;
+  }
+}

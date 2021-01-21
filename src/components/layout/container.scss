@@ -1,0 +1,25 @@
+@import '../../partials/mixins';
+
+.section_container {
+  background-color: #edf1fa;
+  padding: 0 10rem;
+  min-height: calc(100vh - 6vh);
+
+  @include media(tab-land) {
+    padding: 0 6rem;
+  }
+
+  @include media(tab-sm) {
+    padding: 0 2rem;
+  }
+
+  @include media(tab-xm) {
+    padding: 0 2rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1.5rem 0 1rem;
+  }
+}
