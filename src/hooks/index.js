@@ -71,7 +71,7 @@ export const usePagination = (initialState) => {
     setSlicedData(
       [...data].slice((currentPage - 1) * perPage, currentPage * perPage)
     );
-  }, [data]);
+  }, [data]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return {
     slicedData,

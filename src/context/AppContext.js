@@ -44,30 +44,29 @@ export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, initialState);
   const { modalContent, modalIsVisible, handleContent } = useModal();
 
-  const loadInitialData = async () => {
-    const result = await get();
-    if (response.ok) {
-      const {
-        records: { profiles },
-        size,
-      } = result;
-
-      dispatch({
-        type: ACTIONS.SET_FETCH_RESULT,
-        payload: {
-          data: {
-            result: profiles,
-            size,
-          },
-          loading: false,
-        },
-      });
-    }
-  };
-
   useEffect(() => {
+    const loadInitialData = async () => {
+      const result = await get();
+      if (response.ok) {
+        const {
+          records: { profiles },
+          size,
+        } = result;
+
+        dispatch({
+          type: ACTIONS.SET_FETCH_RESULT,
+          payload: {
+            data: {
+              result: profiles,
+              size,
+            },
+            loading: false,
+          },
+        });
+      }
+    };
     loadInitialData();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Provider

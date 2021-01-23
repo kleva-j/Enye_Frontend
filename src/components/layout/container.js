@@ -27,18 +27,17 @@ export const Container = () => {
     setSearchPhrase(() => search);
   }, 500);
 
-  const setSearchResult = (newResult) => {
-    const keyword = searchPhrase.toLowerCase().trim();
-    const searchResult = filter(newResult, (item) => {
-      return (
-        item.FirstName.toLowerCase().includes(keyword) ||
-        item.LastName.toLowerCase().includes(keyword)
-      );
-    });
-    setList(searchResult);
-  };
-
   useEffect(() => {
+    const setSearchResult = (newResult) => {
+      const keyword = searchPhrase.toLowerCase().trim();
+      const searchResult = filter(newResult, (item) => {
+        return (
+          item.FirstName.toLowerCase().includes(keyword) ||
+          item.LastName.toLowerCase().includes(keyword)
+        );
+      });
+      setList(searchResult);
+    };
     setSearchResult(result);
   }, [result, searchPhrase]);
 
